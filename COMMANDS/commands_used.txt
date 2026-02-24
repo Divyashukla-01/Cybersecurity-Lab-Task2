@@ -1,0 +1,41 @@
+COMMANDS USED
+
+1. RECONNAISSANCE
+
+ifconfig
+whois example.com
+nslookup example.com
+ping 192.168.56.101
+nmap 192.168.56.101
+
+
+
+2. PORT & SERVICE SCANNING
+
+nmap -sS 192.168.56.101
+nmap -sU --top-ports 100 192.168.56.101
+nmap -sV 192.168.56.101
+sudo nmap -O 192.168.56.101
+sudo nmap -A 192.168.56.101
+
+
+
+3. VULNERABILITY SCANNING
+
+sudo systemctl start nessusd
+https://localhost:8834
+
+
+
+4. PACKET ANALYSIS
+
+wireshark
+ftp 192.168.56.101
+sudo hping3 -S 192.168.56.101 -p 80 --flood
+
+
+5. FIREWALL CONFIGURATION
+sudo iptables -L
+sudo iptables -A INPUT -p tcp --dport 21 -j DROP
+sudo iptables -L
+sudo iptables -F
